@@ -23,8 +23,8 @@ app.use(
       mongoUrl: process.env.MONGODB_URI, // Ensure this environment variable is correctly named and set
     }),
     cookie: {
-      maxAge: 1000 * 60 * 60 * 24, // Equals 24
-    }
+      maxAge: 1000 * 60 * 60 * 24, // Equals 24 hours
+    },
   })
 );
 
@@ -35,6 +35,7 @@ app.use(passport.session());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(methodOverride("_method"));
+
 // Static files
 app.use(express.static("public"));
 
