@@ -9,7 +9,7 @@ passport.use(
     {
       clientID: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-      callbackURL: 'https://notes-yard-full.onrender.com/auth/google/callback',
+      callbackURL: process.env.GOOGLE_CALLBACK_URL,
     },
     async function (accessToken, refreshToken, profile, done) {
       const newUser = {
